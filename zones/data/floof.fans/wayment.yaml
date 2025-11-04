@@ -1,0 +1,11 @@
+---
+records:
+  NS:
+    - target: ns1.desec.io.
+    - target: ns2.desec.org.
+
+  DS:
+    - keyTag: 16052
+      algorithm: 13
+      digestType: 2
+      digest: f76412faff71c5eec968c21fe5cadbe34de3c0e5a9192888632f38c0d7ba26e1
