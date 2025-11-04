@@ -1,0 +1,7 @@
+{
+  "extends": "@domains/tsconfig",
+  "include": ["./src/"],
+  "compilerOptions": {
+    "types": ["@domains/dnscontrol/types", "@rslib/core/types"]
+  }
+}

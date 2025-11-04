@@ -1,0 +1,19 @@
+{
+  "name": "@domains/config",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "rslib build",
+    "push": "dnscontrol push --config=dist/index.js",
+    "check": "dnscontrol check --config=dist/index.js",
+    "preview": "dnscontrol preview --config=dist/index.js"
+  },
+  "devDependencies": {
+    "@domains/dnscontrol": "workspace:^",
+    "@domains/tsconfig": "workspace:^",
+    "@rslib/core": "^0.6.9",
+    "typescript": "^5.9.3"
+  }
+}
