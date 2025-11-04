@@ -1,0 +1,12 @@
+{
+  "name": "@domains/tsconfig",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "tsconfig.json",
+  "dependencies": {
+    "@rslib/core": "^0.17.0",
+    "@tsconfig/strictest": "^2.0.7"
+  }
+}
