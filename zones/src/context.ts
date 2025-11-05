@@ -16,8 +16,7 @@ export const domainTree: DomainTree = context.keys().reduce((tree, path) => {
   const module = context(path) as { default: Zone };
 
   const [zone, sub] = parsePath(path);
-  tree[zone] ??= {};
-  tree[zone][sub] = module.default;
+  (tree[zone] ??= {})[sub] = module.default;
 
   return tree;
 }, {} as DomainTree);

@@ -2,9 +2,6 @@
   "extends": "@domains/tsconfig",
   "include": ["./src/"],
   "compilerOptions": {
-    "types": ["@domains/dnscontrol/types", "@rslib/core/types"],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "types": ["@domains/dnscontrol/types", "@rslib/core/types"]
   }
 }

@@ -1,0 +1,4 @@
+{
+  "extends": "@domains/tsconfig",
+  "include": ["./src/"]
+}

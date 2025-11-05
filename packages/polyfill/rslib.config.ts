@@ -1,5 +1,4 @@
 import { defineConfig } from "@rslib/core";
-import { pluginYaml } from "@rsbuild/plugin-yaml";
 
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
@@ -7,11 +6,7 @@ export default defineConfig({
     {
       format: "cjs",
       syntax: "es5",
-      dts: true,
+      autoExternal: false,
     },
   ],
-  resolve: {
-    alias: { "@": "./src" },
-  },
-  plugins: [pluginYaml()],
 });

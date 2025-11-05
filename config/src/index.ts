@@ -1,16 +1,17 @@
+import "@domains/polyfill";
+
 import { domainTree, recordToDomainModifier, RecordType } from "@domains/zones";
 
 const dns = NewDnsProvider("dns");
 const registrar = NewRegistrar("none");
 
-Object.keys(domainTree).forEach((domain) => {
+for (const [domain, mapping] of Object.entries(domainTree)) {
   D(domain, registrar, DnsProvider(dns));
 
-  const mapping = domainTree[domain]!;
-  Object.keys(mapping).forEach((name) => {
+  for (const name of Object.keys(mapping)) {
     const zone = mapping[name]!;
 
-    Object.values(RecordType).forEach((recordType) => {
+    for (const recordType of Object.values(RecordType)) {
       const records = zone.records[recordType];
       if (records?.length) {
         D_EXTEND(
@@ -18,6 +19,6 @@ Object.keys(domainTree).forEach((domain) => {
           records.map((record) => recordToDomainModifier(recordType, record)),
         );
       }
-    });
-  });
-});
+    }
+  }
+}

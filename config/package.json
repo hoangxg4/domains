@@ -10,10 +10,13 @@
     "check": "dnscontrol check --config=dist/index.js",
     "preview": "dnscontrol preview --config=dist/index.js"
   },
+  "dependencies": {
+    "@domains/polyfill": "workspace:^",
+    "@domains/zones": "workspace:^"
+  },
   "devDependencies": {
     "@domains/dnscontrol": "workspace:^",
     "@domains/tsconfig": "workspace:^",
-    "@domains/zones": "workspace:^",
     "@rslib/core": "^0.6.9",
     "typescript": "^5.9.3"
   }

@@ -2,8 +2,8 @@
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     /* library */
-    "lib": ["DOM", "ES2020"],
-    "target": "ES2020",
+    "lib": ["DOM", "ESNext"],
+    "target": "ES5",
     "noEmit": true,
     "skipLibCheck": true,
     "useDefineForClassFields": false,
