@@ -1,0 +1,10 @@
+---
+records:
+  MX:
+    - priority: 10
+      target: mx1.improvmx.com.
+    - priority: 20
+      target: mx2.improvmx.com.
+
+  TXT:
+    - content: v=spf1 include:spf.improvmx.com ~all
