@@ -10,10 +10,12 @@ const codeOwners = new CodeOwners();
 
 for (const [domain, mapping] of Object.entries(domainTree)) {
   for (const [name, zone] of Object.entries(mapping)) {
-    codeOwners.addRule({
-      pattern: join(DATA_ROOT, domain, `${name}.yaml`),
-      owners: zone.owners,
-    });
+    if (zone.owners?.length) {
+      codeOwners.addRule({
+        pattern: join(DATA_ROOT, domain, `${name}.yaml`),
+        owners: zone.owners,
+      });
+    }
   }
 }
 
