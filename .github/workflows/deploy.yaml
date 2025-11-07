@@ -9,9 +9,9 @@ on:
       - .github/workflows/deploy.yaml
       - go.mod
       - go.sum
+      - packages/zones/data/**.yaml
       - "**.go"
       - "**.ts"
-      - "**.yaml"
 
 jobs:
   deploy:
