@@ -1,7 +1,4 @@
 ---
-owners:
-  - "@krabiworld"
-
 records:
   NS:
     - target: ns1.desec.io.

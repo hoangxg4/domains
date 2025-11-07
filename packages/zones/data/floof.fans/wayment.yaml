@@ -1,7 +1,4 @@
 ---
-owners:
-  - "@whymentt"
-
 records:
   NS:
     - target: ns1.desec.io.

@@ -1,7 +1,4 @@
 ---
-owners:
-  - "@kasefuchs"
-
 records:
   NS:
     - target: ns1.desec.io.
