@@ -1,4 +1,7 @@
 ---
+owners:
+  - "@kasefuchs"
+
 records:
   MX:
     - priority: 10

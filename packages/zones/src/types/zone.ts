@@ -5,6 +5,7 @@ export type ZoneRecords = {
 };
 
 export interface Zone {
+  owners: string[];
   records: ZoneRecords;
 }
 

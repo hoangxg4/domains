@@ -9,6 +9,7 @@ export enum RecordType {
   SRV = "SRV",
   NS = "NS",
   DS = "DS",
+  ALIAS = "ALIAS"
 }
 
 export interface BaseRecord {
@@ -65,6 +66,10 @@ export interface DSRecord extends BaseRecord {
   digest: string;
 }
 
+export interface ALIASRecord extends BaseRecord {
+  target: string;
+}
+
 export interface RecordMap {
   [RecordType.A]: ARecord;
   [RecordType.AAAA]: AAAARecord;
@@ -76,6 +81,7 @@ export interface RecordMap {
   [RecordType.SRV]: SRVRecord;
   [RecordType.NS]: NSRecord;
   [RecordType.DS]: DSRecord;
+  [RecordType.ALIAS]: ALIASRecord;
 }
 
 export type RecordFactory<T extends BaseRecord> = (

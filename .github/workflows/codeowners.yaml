@@ -1,12 +1,12 @@
 ---
-name: deploy
+name: codeowners
 
 on:
   push:
     branches:
       - main
     paths:
-      - .github/workflows/deploy.yaml
+      - .github/workflows/codeowners.yaml
       - go.mod
       - go.sum
       - "**.go"
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: write
       id-token: write
 
     steps:
@@ -42,14 +42,16 @@ jobs:
           node-version: 24
 
       - name: Build packages
-        run: pnpm run --recursive --filter @domains/config... build
+        run: pnpm run --recursive --filter @domains/codeowners... build
 
-      - name: Prepare credentials
-        run: printf '%s' '${{ vars.CREDS_JSON }}' > creds.json
-        working-directory: config/
+      - name: Generate codeowners
+        run: pnpm run generate
+        working-directory: codeowners/
 
-      - name: Deploy DNS changes
-        run: pnpm run push
-        env:
-          DESEC_AUTH_TOKEN: ${{ secrets.DESEC_AUTH_TOKEN }}
-        working-directory: config/
+      - name: Update codeowners
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add CODEOWNERS
+          git commit -m ":wrench: Update codeowners" || exit 0
+          git push
