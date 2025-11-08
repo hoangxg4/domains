@@ -27,8 +27,15 @@ language = "en"
 features = [
   "content.action.edit",
   "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "navigation.footer",
+  "navigation.instant",
+  "navigation.instant.progress",
   "navigation.tabs",
-  "navigation.top"
+  "navigation.top",
+  "search.highlight"
 ]
 
 [project.theme.icon]

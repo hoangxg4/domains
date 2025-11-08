@@ -5,4 +5,4 @@ hide:
   - navigation
 ---
 
-# :material-home: Welcome
+# :lucide-house: Welcome
