@@ -1,4 +1,4 @@
-import { defineConfig } from "@rslib/core";
+import {defineConfig} from "@rslib/core";
 
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
@@ -10,6 +10,11 @@ export default defineConfig({
         // language=JavaScript
         js: "var global = this;",
       },
+      output: {
+        filename: {
+          js: "dnsconfig.js"
+        }
+      }
     },
   ],
 });

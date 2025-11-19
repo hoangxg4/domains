@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "build": "rslib build",
-    "push": "dnscontrol push --config=dist/index.js",
-    "check": "dnscontrol check --config=dist/index.js",
-    "preview": "dnscontrol preview --config=dist/index.js"
+    "push": "dnscontrol push --config=dist/dnsconfig.js",
+    "check": "dnscontrol check --config=dist/dnsconfig.js",
+    "preview": "dnscontrol preview --config=dist/dnsconfig.js"
   },
   "dependencies": {
     "@domains/polyfill": "workspace:^",
