@@ -8,10 +8,11 @@ on:
     paths:
       - .github/workflows/deploy.yaml
       - packages/zones/data/**.yaml
+      - "**/package.json"
       - "**.ts"
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,12 +36,28 @@ jobs:
       - name: Build packages
         run: pnpm run --recursive --filter @domains/config... build
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dnsconfig
+          path: config/dist/dnsconfig.js
+
+  apply:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Install DNSControl
+        uses: gacts/install-dnscontrol@v1
+
+      - uses: actions/download-artifact@v5
+        with:
+          name: dnsconfig
+
       - name: Prepare credentials
         run: printf '%s' '${{ vars.CREDS_JSON }}' > creds.json
-        working-directory: config/
 
       - name: Deploy DNS changes
-        run: pnpm run push
+        run: dnscontrol push
         env:
           DESEC_AUTH_TOKEN: ${{ secrets.DESEC_AUTH_TOKEN }}
-        working-directory: config/
