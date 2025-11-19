@@ -12,7 +12,7 @@
     "build": "rslib build"
   },
   "dependencies": {
-    "core-js": "^3.46.0"
+    "core-js": "3.46.0"
   },
   "devDependencies": {
     "@domains/tsconfig": "workspace:^",
