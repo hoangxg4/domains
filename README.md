@@ -6,8 +6,8 @@
     <br>
 </p>
 
-> [!WARNING]  
-> This project has moved to **[Codeberg](https://codeberg.org/kasefuchs/domains)**.  
+> [!WARNING]
+> This project has moved to **[Codeberg](https://codeberg.org/kasefuchs/domains)**.
 > Please open issues and PRs **on Codeberg only**.
 
 ## Website & Documentation

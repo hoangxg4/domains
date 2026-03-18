@@ -17,8 +17,7 @@ nav = [
   ] },
   { "Delegation" = [
     "delegation/index.md",
-    { "ClouDNS" = "delegation/cloudns.md" },
-    { "deSEC" = "delegation/desec.md" }
+    { "ClouDNS" = "delegation/cloudns.md" }
   ] }
 ]
 

@@ -9,6 +9,9 @@ export interface Zone {
   records: ZoneRecords;
 }
 
-export interface DomainTree {
-  [domain: string]: Record<string, Zone>;
+export interface ApexZone extends Zone {
+  provider: string;
+  children: Record<string, Zone>;
 }
+
+export type DomainTree = Record<string, ApexZone>;

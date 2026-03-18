@@ -9,7 +9,7 @@ records:
 
   CNAME:
     - name: "@"
-      target: coral.vps.kasefuchs.net.
+      target: silky.kasefuchs.net.
 
   SRV:
     - name: _minecraft._tcp
