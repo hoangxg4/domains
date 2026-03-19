@@ -12,6 +12,7 @@ when:
 steps:
   - name: build
     image: node:24-alpine
+    # language="sh"
     commands:
       - corepack enable
       - pnpm install
@@ -22,6 +23,7 @@ steps:
     environment:
       CREDS_JSON:
         from_secret: DNSCONTROL_CREDS_JSON
+    # language="sh"
     commands:
       - cd config/dist/
       - printf '%s' "$${CREDS_JSON}" > creds.json

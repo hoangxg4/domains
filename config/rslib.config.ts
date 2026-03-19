@@ -14,6 +14,8 @@ export default defineConfig({
         filename: {
           js: "dnsconfig.js",
         },
+        minify: true,
+        sourceMap: !!process.env.RSDOCTOR,
       },
     },
   ],

@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "build": "rslib build",
+    "build:rsdoctor": "RSDOCTOR=true rslib build",
     "push": "dnscontrol push --config=dist/dnsconfig.js",
     "check": "dnscontrol check --config=dist/dnsconfig.js",
     "preview": "dnscontrol preview --config=dist/dnsconfig.js"
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@domains/dnscontrol": "workspace:^",
     "@domains/tsconfig": "workspace:^",
+    "@rsdoctor/rspack-plugin": "^1.5.4",
     "@rslib/core": "^0.6.9",
     "typescript": "^5.9.3"
   }
