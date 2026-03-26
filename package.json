@@ -1,0 +1,10 @@
+{
+  "name": "@kasefuchs/domains",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "config",
+    "packages/*"
+  ]
+}

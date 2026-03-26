@@ -11,12 +11,11 @@ when:
 
 steps:
   - name: build
-    image: node:24-alpine
+    image: oven/bun:1.3.11-alpine
     # language="sh"
     commands:
-      - corepack enable
-      - pnpm install
-      - pnpm run --recursive --filter @domains/config... build
+      - bun install
+      - bun run --workspaces build
 
   - name: deploy
     image: stackexchange/dnscontrol:4.30.0
